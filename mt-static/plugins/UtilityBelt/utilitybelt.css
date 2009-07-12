@@ -1,0 +1,186 @@
+/* Cut & Pasted from structure.css */
+
+#utility-belt {
+    display: block; 
+    width: 100%; 
+    height: 25px; 
+    background: #575757; 
+    position: fixed; 
+    bottom: 0;
+    z-index: 5;
+}
+
+#utility-belt-inner {
+    width: 920px;
+    margin: 0 auto;
+}
+
+#utility-belt ul {
+    float: left;
+    list-style: none;
+}
+#utility-belt-list li ul {
+    position: fixed;
+    bottom: 15px;
+    left: -999em;
+    float: none;
+    width: 150px;
+    background-image: none;
+    border-left: 1px solid #424242;
+    border-right: 1px solid #424242;
+    border-bottom: 1px solid #424242;
+}
+
+#utility-belt-list li:hover ul { 
+    left: auto;
+}
+
+#utility-belt li {
+    float: left;
+    cursor: pointer;
+}
+#utility-belt-list li ul li {
+    float: none;
+    display: block;
+}
+
+#utility-belt a {
+    display: block;
+    border: none;
+    padding: 10px 10px 9px;
+    text-decoration: none;
+    white-space: nowrap;
+    text-align: left;
+}
+
+#utility-belt ul ul a {
+    padding: .35em 40px .35em 10px;
+}
+
+#utility-belt a {
+    color: #33789c;
+    font-size: 12px;
+}
+
+#utility-belt a:hover {
+    color: #ebf2f5;
+}
+
+#utility-belt li:hover a { 
+    background-color: #575757;
+    color: #ebf2f5;
+}
+#utility-belt li:hover li a { 
+    color: #c2e3f3;
+    border-top: 1px solid #424242;
+}
+#utility-belt li:hover li:hover a, #utility-belt li:hover li:hover li:hover a, #utility-belt li:hover li:hover li:hover li:hover a { 
+    background-color: #474747;
+}
+
+#utility-belt li:hover li span {
+    color: #777;
+    background-color: #575757;
+    border-top: 1px solid #424242;
+}
+
+/*#utility-belt-list {
+    float: left;
+    margin-left: 10px;
+}
+
+#utility-belt-list li { float: left; }
+
+
+
+#utility-belt-list li ul {
+    position: absolute;
+    left: -999em;
+    float: none;
+    width: 150px;
+    background-image: none;
+    border-right: 1px solid #424242;
+    border-bottom: 1px solid #424242;
+}*/
+
+/* Sub Sub (Sub?) Menus - Jesus this is getting crazy */
+
+#utility-belt-list li ul li, #utility-belt-list li ul li ul li { position: relative; }
+#utility-belt-list li ul li ul, #utility-belt-list li ul li:hover ul li ul { 
+    position: absolute; 
+    bottom: -20px;
+    left: -999px !important;
+}
+#utility-belt-list li ul li:hover ul, #utility-belt-list li ul li ul li:hover ul { 
+    left: 180px !important;
+}
+
+#utility-belt li:hover li:hover li a, #utility-belt li:hover li:hover li:hover li a, #utility-belt li:hover li:hover li:hover li a { 
+    background-color: #575757;
+}
+
+#utility-belt-list .blog-header { 
+    background: #3F3B3B;
+    color: #fff;
+}
+
+#utility-belt-list li a.label {
+    text-indent: -9999px;
+    overflow: hidden;
+    display: block;
+    width: 16px;
+    height: 16px;
+    padding: 5px;
+    margin-right: 15px;
+}
+
+#utility-belt-list li:hover a.label, #options:hover { background-color: #474747 !important; }
+
+
+#utility-belt-list li#utilitybelt-rebuild a.label {
+    background: transparent url(images/arrow_refresh.png) no-repeat 5px 5px;
+}
+
+#utility-belt-list li#utilitybelt-rebuild ul { width: 180px; }
+
+#utility-belt-list li#utilitybelt-upload-menu a.label {
+    background: transparent url(images/page_white_get.png) no-repeat 5px 5px;
+}
+
+#utilitybelt-options {
+    float: right;
+    padding: 5px !important;
+}
+
+#utilitybelt-options span {
+    background:transparent url(images/cog.png) no-repeat;
+    display:block;
+    overflow:hidden;
+    text-indent:-9999px;
+    width: 16px;
+}
+
+#utility-belt .progress-bar {
+    background: transparent url(../../images/progress-bar.gif) repeat-x scroll 100% 0pt;
+    border: 1px solid #9CBCCB;
+    height: 4px;
+    margin: 5px 10px 0 0;
+    padding: 0 5px 10px 5px;
+    font-size: x-small;
+    color: #333;
+}
+
+#utility-belt .progress-bar-indeterminate {
+    background: url('../../images/progress-bar-indeterminate.gif') repeat-x 0 0;
+}
+
+#utility-belt-msg-container {
+    margin: 0px auto;
+    width: 920px;
+}
+
+#utility-belt-msg { 
+    width: 300px; 
+    position: fixed;
+    bottom: 20px;
+}

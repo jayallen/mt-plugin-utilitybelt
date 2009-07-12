@@ -1,0 +1,46 @@
+<div id="utility-belt-msg-container">
+    <mtapp:statusmsg
+     id="utility-belt-msg"
+     class="success">
+        <span><__trans phrase="Your files have been rebuilt"></span>
+    </mtapp:statusmsg>
+</div>
+
+<div id="utility-belt">
+    <div id="utility-belt-inner">
+        <ul id="utility-belt-list">
+            <li id="utilitybelt-rebuild" class="nav-menu">
+                <a href="#" class="label"><__trans phrase="Rebuild"></a>
+                <ul>
+                    <li class="blog-header"><strong><__trans phrase="Rebuild"></strong></li>
+                    <mt:loop name="top_blog_loop">
+                        <li><a href="javascript: void(0);"><mt:var name="top_blog_name"></a>
+                            <ul>
+                                <li class="blog-header"><strong><mt:var name="top_blog_name"></strong></li>
+                                <li><a href="javascript: utilityCallRebuild('<mt:var name="script_url">', <mt:var name="top_blog_id">, '<mt:var name="build_order" escape="js">');"><__trans phrase="All Files"></a></li>
+                                <li><a href="javascript: utilityCallRebuild('<mt:var name="script_url">', <mt:var name="top_blog_id">, 'index');"><__trans phrase="Indexes"></a>
+                                    <ul>
+                                        <li class="blog-header"><strong><__trans phrase="Index Templates"></strong></li>
+                                        <li><a href="javascript: utilityCallRebuild('<mt:var name="script_url">', <mt:var name="top_blog_id">, 'index');"><__trans phrase="All Indexes"></a></li>
+                                        <mt:loop name="index_loop">
+                                            <li><a href="javascript: utilityCallRebuild('<mt:var name="script_url">?single_template=1&amp;tmpl_id=<mt:var name="id">', <mt:var name="top_blog_id">, 'index-<mt:var name="id">');"><mt:var name="name"></a></li>
+                                        </mt:loop>
+                                    </ul>
+                                </li>
+                                <mt:loop name="archive_type_loop">
+                                <li><a href="javascript: utilityCallRebuild('<mt:var name="script_url">', <mt:var name="top_blog_id">, '<mt:var name="archive_type" escape="js">');"><__trans phrase="[_1] Archives" params="<mt:var name="archive_type_label" escape="html">"></a></li>
+                                </mt:loop>
+                            </ul>
+                    </mt:loop>
+                </ul> 
+            </li>
+            
+            <li id="utilitybelt-rebuilding" class="nav-menu" style="display: none;"><div class="progress-bar progress-bar-indeterminate"><span mt:default="<__trans phrase="Publishing...">"><__trans phrase="Publishing..."></span></div></li>
+        
+            <!-- <li id="utilitybelt-upload-menu" class="nav-menu">
+                <a href="#" class="label">Upload</a>
+            </li> -->
+        </ul>
+        <!-- <a href="#" id="utilitybelt-options"><span>Options</span></a> -->
+    </div>
+</div>
