@@ -23,6 +23,12 @@ sub footer_param {
     require MT::CMS::Blog;
     my %args;
     $app->build_blog_selector(\%args);
+    
+    push @{$args{top_blog_loop}}, {
+        top_blog_id => $app->blog->id,
+        top_blog_name => $app->blog->name
+    };
+    
     foreach my $b (@{$args{top_blog_loop}}) {
         my $blog = MT::Blog->load($b->{top_blog_id});
         MT::CMS::Blog::_create_build_order( $app, $blog, $b );
