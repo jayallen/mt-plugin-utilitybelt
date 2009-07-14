@@ -91,7 +91,7 @@ function utilityRebuilding(param, textStatus) {
         ubRebuilding.hide(); 
         ubRebuildMsgSpan.text(param.rebuilt_label);
         ubRebuildMsg.removeClass('hidden');
-        ubRebuildMsg.slideDown("fast"); 
+        ubRebuildMsg.slideDown("fast").animate({opacity: 1.0}, 3000).fadeOut('slow');
         
         // Reset     
         progressBarMsg.text(progressBarMsg.attr('mt:default'));
